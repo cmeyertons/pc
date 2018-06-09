@@ -9,4 +9,9 @@ choco install everything
 choco install 7zip.install
 choco install dotnet4.7
 choco install vscode
+choco install git /NoShellIntegration
+choco install pia
+choco install qbittorrent
 refreshenv
+
+ssh-keygen -t rsa
