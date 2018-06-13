@@ -11,13 +11,13 @@ choco install crystaldiskinfo
 choco install autohotkey
 choco install everything
 choco install 7zip
-choco install dotnet4.7
 choco install vscode
 choco install git /NoShellIntegration
 choco install pia
 choco install qbittorrent
 choco install vlc
 choco install google-backup-and-sync
+choco install github
 refreshenv
 
 git config --global user.name = "Carl Meyertons"
