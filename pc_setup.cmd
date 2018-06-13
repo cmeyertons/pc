@@ -1,4 +1,8 @@
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+start https://aka.ms/azureml-wb-msi
+start https://www.visualstudio.com/downloads/
+
 choco feature enable -n allowGlobalConfirmation
 choco install notepadplusplus
 choco install wox
@@ -13,6 +17,7 @@ choco install git /NoShellIntegration
 choco install pia
 choco install qbittorrent
 choco install vlc
+choco install google-backup-and-sync
 refreshenv
 
 git config --global user.name = "Carl Meyertons"
