@@ -31,3 +31,6 @@ refreshenv
 ssh-keygen -t rsa -b 4096 -C "carlmeyertons@gmail.com"
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
+cat ~/.ssh/id_rsa.pub | clip
+echo "Github key copied to clipboard and ready to paste"
+start https://github.com/settings/ssh/new
