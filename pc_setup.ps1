@@ -20,6 +20,7 @@ choco install google-backup-and-sync
 choco install github
 choco install terraform
 choco install azure-cli
+choco install boxsync
 refreshenv
 
 git config --global user.name = "Carl Meyertons"
