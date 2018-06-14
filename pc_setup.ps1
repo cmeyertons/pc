@@ -1,8 +1,5 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
-start https://aka.ms/azureml-wb-msi
-start https://www.visualstudio.com/downloads/
-
 choco feature enable -n allowGlobalConfirmation
 choco install notepadplusplus
 choco install wox
@@ -23,17 +20,29 @@ choco install azure-cli
 choco install boxsync
 refreshenv
 
+npm install -g @angular/cli
+
 git config --global user.name = "Carl Meyertons"
 git config --global user.email = "carlmeyertons@gmail.com"
 # workaround for github desktop defaulting to HTTPS...
 git config --global url."git@github.com:".insteadOf https://github.com/
 
 # generate SSH key (may need to be done in bash script)
-[Environment]::SetEnvironmentVariable("Path", $env:Path + ";C:\Program Files\Git\usr\bin", [EnvironmentVariableTarget]::User)
-refreshenv
+$sshKeyGenPath = ";C:\Program Files\Git\usr\bin"
+
+if ($env:Path.Contains($sshKeyGenPath) -eq $false)
+{
+	$env:Path = $env:Path + $sshKeyGenPath
+}
+
 ssh-keygen -t rsa -b 4096 -C "carlmeyertons@gmail.com"
 eval $(ssh-agent -s)
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | clip
 echo "Github key copied to clipboard and ready to paste"
+
+# open a bunch of stuff
 start https://github.com/settings/ssh/new
+start https://aka.ms/azureml-wb-msi
+start https://www.visualstudio.com/downloads/
+code
